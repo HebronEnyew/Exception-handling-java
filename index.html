@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>arithematic</title>
+    <style>
+        input{
+            font-size: 2em;
+            margin: 10px 1px 0;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" class="classInput">
+    <p></p>
+
+    <script>
+        const input = document.querySelector('.classInput');
+        const para = document.querySelector('p');
+
+        function squared(num){
+            return num*num;
+        }
+        function cubed(num){
+            return num*num*num;
+        }
+
+        function factorial(num){
+            let x = num;
+            while(x>1){
+                num = num * (x-1);
+                x--;
+            }
+            return num;
+        }
+
+        function squareRoot(num){
+            return Math.sqrt(num);
+        }
+
+        function cubeRoot(num){
+            return Math.cbrt(num);
+        }
+
+        input.addEventListener('change', () => {
+            const num = parseFloat(input.value);
+            if(isNan(num)){
+                para.textContent = "enter a number"
+            }
+            else{
+                para.textContent = `$(num) squared is $(squared(num))`;
+                para.textContent = `$(num) cubed is $(cubed(num))`;
+                para.textContent = `$(num) factorial is $(factorial(num))`;
+            }
+        })
+    </script>
+</body>
+</html>
